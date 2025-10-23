@@ -1,0 +1,25 @@
+stages:
+  preprocess:
+    cmd: python preprocess.py
+    deps:
+      - data/wine_data_raw.csv
+      - preprocess.py
+    outs:
+      - data/train_data.csv
+      - data/test_data.csv
+
+  train:
+    cmd: python train.py
+    deps:
+      - train.py
+      - data/train_data.csv
+    outs:
+      - models/model.joblib
+
+  tune:
+    cmd: python tune.py
+    deps:
+      - tune.py
+      - data/train_data.csv
+    outs:
+      - models/
