@@ -53,8 +53,8 @@ with mlflow.start_run(run_name="RandomForest_Tuning") as parent_run:
 
                 # Log model to MLflow and save locally
                 mlflow.sklearn.log_model(model, "random_forest_model")
-                os.makedirs("models", exist_ok=True)
-                model_path = f"models/rf_model_n{n_est}_d{depth}.joblib"
+                os.makedirs("models/tune", exist_ok=True)
+                model_path = f"models/tune/rf_model_n{n_est}_d{depth}.joblib"
                 joblib.dump(model, model_path)
 
 print("\n✅ Tuning complete. Models and logs saved.")

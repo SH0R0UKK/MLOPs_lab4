@@ -23,7 +23,7 @@ train_acc = accuracy_score(y_train, train_pred)
 print(f"Training Accuracy: {train_acc:.4f}")
 
 # === Save model ===
-os.makedirs('models', exist_ok=True)
-model_path = 'models/model.joblib'
+os.makedirs('models/train', exist_ok=True)
+model_path = 'models/train/model.joblib'
 joblib.dump(model, model_path)
 print(f"✅ Model saved to '{model_path}'")

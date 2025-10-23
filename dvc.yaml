@@ -14,12 +14,13 @@ stages:
       - train.py
       - data/train_data.csv
     outs:
-      - models/model.joblib
+      - models/train/model.joblib
 
   tune:
     cmd: python tune.py
     deps:
       - tune.py
       - data/train_data.csv
+      - data/test_data.csv
     outs:
-      - models/
+      - models/tune/
