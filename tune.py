@@ -9,8 +9,8 @@ import os
 
 
 # === Load data ===
-print("Loading training data...")
-df = pd.read_csv('data/train_data.csv')
+print("Loading test data...")
+df = pd.read_csv('data/test_data.csv')
 
 X = df.drop('quality', axis=1)
 y = df['quality']
